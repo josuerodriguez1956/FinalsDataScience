@@ -1,0 +1,63 @@
+
+install.packages("readxl")
+install.packages("ggplot2")
+install.packages("dplyr")
+install.packages("hrbrthemes")
+
+library("readxl")
+library("ggplot2")
+library("dplyr")
+library("hrbrthemes")
+
+ruta <- file.choose()
+
+data <- read_excel(ruta)
+data <- data[-c(248:257),]
+data <- data[,-3]
+data$rage <- as.integer(data$rage)
+
+i=1
+rage2014=0
+rage2015=0
+rage2016=0
+rage2017=0
+rage2018=0
+
+while(i <= 247) {
+  if(data[i,3]==1){ 
+    data[i,3]="2014"
+    rage2014=rage2014+data[i,1]
+}
+  if(data[i,3]==2){ 
+    data[i,3]="2015"
+    rage2015=rage2015+data[i,1]
+}
+  if(data[i,3]==3){ 
+    data[i,3]="2016"
+    rage2016=rage2016+data[i,1]
+}
+  if(data[i,3]==4){ 
+    data[i,3]="2017"
+    rage2017=rage2017+data[i,1]
+}
+  if(data[i,3]==5){ 
+    data[i,3]="2018"
+    rage2018=rage2018+data[i,1]
+}
+   i=i+1  
+}
+
+rage=c(as.integer(rage2014),as.integer(rage2015),as.integer(rage2016),as.integer(rage2017),as.integer(rage2018))
+años=c(2014,2015,2016,2017,2018)
+
+dt <- data.frame(años,rage)
+
+dt %>%
+  tail(10) %>%
+  ggplot(aes(x=años, y=rage)) +
+  geom_point(shape=21, color="black", fill="#69b3a2", size=6) +
+  geom_line(color="grey") +
+  theme_ipsum() +
+  labs(x="Años",y="Cantidad de feminicidios (exponencial)") +
+  scale_y_continuous(limits = c(1100,2400)) +
+  ggtitle("Variacion anual de feminicidios")
