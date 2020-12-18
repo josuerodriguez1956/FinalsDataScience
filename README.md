@@ -4,7 +4,7 @@ This repository was created as part of the University of Puerto Rico Rio Piedras
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-##Contents:
+Contents:
 
 1. "La+persistencia+de+la+indolencia+2019.11.12-vf.pdf" : this report published by Proyecto Matria and Kilómetro 0 is the source of this study's data and the inspiration for its execution.
 2. "Workbook1.xlsx" : cleaned data for age, place of death, and date of death taken from the Demographic Registry present in Proyecto Matria's report.
@@ -14,9 +14,9 @@ This repository was created as part of the University of Puerto Rico Rio Piedras
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-##Contributors:
+Contributors:
 
-Andrea Rivera
-Isabel Rivera
-Josué Rodríguez
-Orlando Medina
+Andrea Rivera,
+Isabel Rivera,
+Josué Rodríguez,
+Orlando Medina,
